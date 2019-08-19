@@ -8,7 +8,7 @@
     "@material-ui/icons": "^4.2.0",
     "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
-    "unicef-material-ui": "file:..",
+    "ucurrency": "file:..",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-router-dom": "^5.0.1",

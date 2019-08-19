@@ -1,7 +1,7 @@
 {
   "name": "ucurrency",
   "version": "0.1.0",
-  "description": "Material ui with react",
+  "description": "currency input for react",
   "main": "./dist/index.js",
   "homepage": ".",
   "scripts": {
@@ -26,9 +26,6 @@
     "react-dom": "^16.8.6",
     "webpack": "^4.29.6",
     "prop-types": "^15.7.2"
-  },
-  "bugs": {
-    "url": "https://github.com/unicef/unicef-material-ui/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

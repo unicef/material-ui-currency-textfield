@@ -1,0 +1,55 @@
+export const IconsManifest = [{
+  "id": "fa",
+  "name": "Font Awesome",
+  "projectUrl": "https://fontawesome.com/",
+  "license": "CC BY 4.0 License",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+}, {
+  "id": "io",
+  "name": "Ionicons",
+  "projectUrl": "https://ionicons.com/",
+  "license": "MIT",
+  "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+}, {
+  "id": "md",
+  "name": "Material Design icons",
+  "projectUrl": "http://google.github.io/material-design-icons/",
+  "license": "Apache License Version 2.0",
+  "licenseUrl": "https://github.com/google/material-design-icons/blob/master/LICENSE"
+}, {
+  "id": "ti",
+  "name": "Typicons",
+  "projectUrl": "http://s-ings.com/typicons/",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+}, {
+  "id": "go",
+  "name": "Github Octicons icons",
+  "projectUrl": "https://octicons.github.com/",
+  "license": "MIT",
+  "licenseUrl": "https://github.com/primer/octicons/blob/master/LICENSE"
+}, {
+  "id": "fi",
+  "name": "Feather",
+  "projectUrl": "https://feathericons.com/",
+  "license": "MIT",
+  "licenseUrl": "https://github.com/feathericons/feather/blob/master/LICENSE"
+}, {
+  "id": "gi",
+  "name": "Game Icons",
+  "projectUrl": "https://game-icons.net/",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+}, {
+  "id": "wi",
+  "name": "Weather Icons",
+  "projectUrl": "https://erikflowers.github.io/weather-icons/",
+  "license": "SIL OFL 1.1",
+  "licenseUrl": "http://scripts.sil.org/OFL"
+}, {
+  "id": "di",
+  "name": "Devicons",
+  "projectUrl": "https://vorillaz.github.io/devicons/",
+  "license": "MIT",
+  "licenseUrl": "https://opensource.org/licenses/MIT"
+}];

@@ -26579,15 +26579,15 @@ var styles$n = function styles(theme) {
   };
 };
 
-var UCurrency = function (_React$Component) {
-  inherits(UCurrency, _React$Component);
+var CurrencyTextField = function (_React$Component) {
+  inherits(CurrencyTextField, _React$Component);
 
-  function UCurrency(props) {
-    classCallCheck(this, UCurrency);
-    return possibleConstructorReturn(this, (UCurrency.__proto__ || Object.getPrototypeOf(UCurrency)).call(this, props));
+  function CurrencyTextField(props) {
+    classCallCheck(this, CurrencyTextField);
+    return possibleConstructorReturn(this, (CurrencyTextField.__proto__ || Object.getPrototypeOf(CurrencyTextField)).call(this, props));
   }
 
-  createClass(UCurrency, [{
+  createClass(CurrencyTextField, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _props = this.props,
@@ -26701,10 +26701,10 @@ var UCurrency = function (_React$Component) {
       });
     }
   }]);
-  return UCurrency;
+  return CurrencyTextField;
 }(React__default.Component);
 
-UCurrency.propTypes = {
+CurrencyTextField.propTypes = {
   type: PropTypes__default.oneOf(["text", "tel", "hidden"]),
   variant: PropTypes__default.string,
   id: PropTypes__default.string,
@@ -26744,14 +26744,14 @@ UCurrency.propTypes = {
   preDefined: PropTypes__default.object
 };
 
-UCurrency.defaultProps = {
+CurrencyTextField.defaultProps = {
   type: "text",
   variant: "standard",
   outputFormat: "number",
   preDefined: {}
 };
-var UCurrency$1 = withStyles(styles$n)(UCurrency);
+var CurrencyTextField$1 = withStyles(styles$n)(CurrencyTextField);
 
 var predefinedOptions = AutoNumeric.getPredefinedOptions();
 
-module.exports = UCurrency$1;
+module.exports = CurrencyTextField$1;

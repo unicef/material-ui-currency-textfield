@@ -1,12 +1,12 @@
 import React from "react";
-import UCurrency from "ucurrency";
+import CurrencyTextField from "ucurrency";
 
 export default function App() {
 
   const [value, setValue] = React.useState(100);
 
   return (
-    <UCurrency
+    <CurrencyTextField
     label="Amount"
     variant="standard"
     value={value}

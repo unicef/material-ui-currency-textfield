@@ -20,7 +20,7 @@ const styles = theme => ({
 })
 
 
-class UCurrency extends React.Component {
+class CurrencyTextField extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -103,7 +103,7 @@ class UCurrency extends React.Component {
   }
 }
 
-UCurrency.propTypes = {
+CurrencyTextField.propTypes = {
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
   variant: PropTypes.string,
   id: PropTypes.string,
@@ -143,12 +143,12 @@ UCurrency.propTypes = {
   preDefined: PropTypes.object,
 };
 
-UCurrency.defaultProps = {
+CurrencyTextField.defaultProps = {
   type: "text",
   variant: "standard",
   outputFormat: "number",
   preDefined: {},
 };
-export default withStyles(styles)(UCurrency)
+export default withStyles(styles)(CurrencyTextField)
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions();

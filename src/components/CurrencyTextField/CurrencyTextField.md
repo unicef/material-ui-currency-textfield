@@ -7,7 +7,7 @@ const [value, setValue] = React.useState(100);
 
 <Grid container spacing={3}>
 	<Grid item xs={12} md={4}>
-		<UCurrency
+		<CurrencyTextField
 			label="Amount"
 			value={value}
 			currencySymbol="$"
@@ -15,7 +15,7 @@ const [value, setValue] = React.useState(100);
 		/>
 	</Grid>
 	<Grid item xs={12} md={4}>
-		<UCurrency
+		<CurrencyTextField
 			label="Amount"
 			variant="outlined"
 			value={value}
@@ -24,7 +24,7 @@ const [value, setValue] = React.useState(100);
 		/>
 	</Grid>
 	<Grid item xs={12} md={4}>
-		<UCurrency
+		<CurrencyTextField
 			label="Amount"
 			variant="filled"
 			value={value}

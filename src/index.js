@@ -1,3 +1,3 @@
-import UCurrency from './components/UCurrency'
+import CurrencyTextField from './components/CurrencyTextField'
 
-export default UCurrency
+export default CurrencyTextField

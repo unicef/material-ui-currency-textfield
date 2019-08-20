@@ -2,12 +2,14 @@ import React from "react";
 import UCurrency from "ucurrency";
 
 export default function App() {
+
+  const [value, setValue] = React.useState(100);
+
   return (
     <UCurrency
-      locale="en-UK"
-      currency="GBP"
-      currencyDisplay="symbol"
-      initialValue={100}
+    value={value}
+    currencySymbol="$"
+    onChange={(event, value)=> setValue(value) }
     />
   );
 }

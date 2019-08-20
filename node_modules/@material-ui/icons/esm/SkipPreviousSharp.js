@@ -1,8 +1,0 @@
-import React from 'react';
-import createSvgIcon from './utils/createSvgIcon';
-export default createSvgIcon(React.createElement(React.Fragment, null, React.createElement("path", {
-  fill: "none",
-  d: "M0 0h24v24H0V0z"
-}), React.createElement("path", {
-  d: "M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z"
-})), 'SkipPreviousSharp');

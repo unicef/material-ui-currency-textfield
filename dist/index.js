@@ -26570,12 +26570,7 @@ var UCurrency = function (_React$Component) {
 
   function UCurrency(props) {
     classCallCheck(this, UCurrency);
-
-    var _this = possibleConstructorReturn(this, (UCurrency.__proto__ || Object.getPrototypeOf(UCurrency)).call(this, props));
-
-    _this.getValue = _this.getValue.bind(_this);
-    _this.callEventHandler = _this.callEventHandler.bind(_this);
-    return _this;
+    return possibleConstructorReturn(this, (UCurrency.__proto__ || Object.getPrototypeOf(UCurrency)).call(this, props));
   }
 
   createClass(UCurrency, [{

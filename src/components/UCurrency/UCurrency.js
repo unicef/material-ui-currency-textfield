@@ -6,8 +6,6 @@ import { TextField, InputAdornment } from "@material-ui/core";
 export default class UCurrency extends React.Component {
   constructor(props) {
     super(props);
-    this.getValue = this.getValue.bind(this);
-    this.callEventHandler = this.callEventHandler.bind(this);
   }
   componentDidMount() {
     const { currencySymbol, ...others} = this.props
@@ -68,12 +66,12 @@ export default class UCurrency extends React.Component {
         <TextField
         variant="outlined"
         inputRef={ref => (this.input = ref)}
-        onChange={e => this.callEventHandler(e, "onChange")}
-        onFocus={e => this.callEventHandler(e, "onFocus")}
-        onBlur={e => this.callEventHandler(e, "onBlur")}
-        onKeyPress={e => this.callEventHandler(e, "onKeyPress")}
-        onKeyUp={e => this.callEventHandler(e, "onKeyUp")}
-        onKeyDown={e => this.callEventHandler(e, "onKeyDown")}
+        onChange={(e) => this.callEventHandler(e, "onChange")}
+        onFocus={(e) => this.callEventHandler(e, "onFocus")}
+        onBlur={(e) => this.callEventHandler(e, "onBlur")}
+        onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
+        onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
+        onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
        
         InputProps={{
             startAdornment: <InputAdornment position="start">{this.props.currencySymbol}</InputAdornment>,

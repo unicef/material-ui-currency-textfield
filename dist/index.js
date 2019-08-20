@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var React = require('react');
@@ -26768,5 +26766,4 @@ UCurrency.defaultProps = {
 
 var predefinedOptions = AutoNumeric.getPredefinedOptions();
 
-exports.default = UCurrency;
-exports.predefinedOptions = predefinedOptions;
+module.exports = UCurrency;

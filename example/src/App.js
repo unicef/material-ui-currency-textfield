@@ -7,6 +7,8 @@ export default function App() {
 
   return (
     <UCurrency
+    label="Amount"
+    variant="standard"
     value={value}
     currencySymbol="$"
     onChange={(event, value)=> setValue(value) }

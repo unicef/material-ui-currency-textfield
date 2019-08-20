@@ -1,14 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AutoNumeric from "autonumeric";
+import { withStyles } from '@material-ui/styles';
 import { TextField, InputAdornment } from "@material-ui/core";
 
-export default class UCurrency extends React.Component {
+
+
+
+/**
+ * UCurrency is currency input for react with automated currency number formatting while typing.
+ * 
+ * currency input made with material ui textfield to have material ui look and feel.
+ */
+const styles = theme => ({
+  textField: {
+    textAlign: 'right',
+    justifyContent: 'right',
+  },
+})
+
+
+class UCurrency extends React.Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {
-    const { currencySymbol, ...others} = this.props
+    const { label, currencySymbol, variant, ...others} = this.props
     this.autonumeric = new AutoNumeric(this.input, this.props.value, {
       ...this.props.preDefined,
       ...others,
@@ -61,10 +78,13 @@ export default class UCurrency extends React.Component {
     this.props[eventName](event, this.getValue());
   }
   render() {
-
+    const { classes, label, currencySymbol, variant } = this.props
+    
     return (
         <TextField
-        variant="outlined"
+        label={label}
+        variant={variant}
+        className={classes.textField}
         inputRef={ref => (this.input = ref)}
         onChange={(e) => this.callEventHandler(e, "onChange")}
         onFocus={(e) => this.callEventHandler(e, "onFocus")}
@@ -72,10 +92,12 @@ export default class UCurrency extends React.Component {
         onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
         onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
         onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
-       
         InputProps={{
-            startAdornment: <InputAdornment position="start">{this.props.currencySymbol}</InputAdornment>,
-          }}
+          startAdornment: <InputAdornment position="start">{currencySymbol}</InputAdornment>, 
+        }}
+        inputProps={{
+          className: classes.textField
+        }}
         />
     );
   }
@@ -83,6 +105,7 @@ export default class UCurrency extends React.Component {
 
 UCurrency.propTypes = {
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
+  variant: PropTypes.string,
   id: PropTypes.string,
   className: PropTypes.string,
   style: PropTypes.object,
@@ -100,9 +123,6 @@ UCurrency.propTypes = {
   onKeyPress: PropTypes.func,
   onKeyUp: PropTypes.func,
   onKeyDown: PropTypes.func,
-  allowDecimalPadding: PropTypes.bool,
-  caretPositionOnFocus: PropTypes.number,
-  createLocalList: PropTypes.bool,
   currencySymbol: PropTypes.string,
   currencySymbolPlacement: PropTypes.string,
   decimalCharacter: PropTypes.string,
@@ -111,55 +131,24 @@ UCurrency.propTypes = {
   decimalPlacesRawValue: PropTypes.number,
   decimalPlacesShownOnBlur: PropTypes.number,
   decimalPlacesShownOnFocus: PropTypes.number,
-  defaultValueOverride: PropTypes.string,
-  digitalGroupSpacing: PropTypes.string,
-  digitGroupSeparator: PropTypes.string,
-  divisorWhenUnfocused: PropTypes.number,
-  emptyInputBehavior: PropTypes.oneOf(["null", "focus", "press", "always", "zero"]),
-  eventBubbles: PropTypes.bool,
-  eventIsCancelable: PropTypes.bool,
-  failOnUnknownOption: PropTypes.bool,
-  formatOnPageLoad: PropTypes.bool,
-  historySize: PropTypes.number,
-  isCancellable: PropTypes.bool,
   leadingZero: PropTypes.oneOf(["allow", "deny", "keep"]),
   maximumValue: PropTypes.string,
   minimumValue: PropTypes.string,
-  modifyValueOnWheel: PropTypes.bool,
-  negativeBracketsTypeOnBlur: PropTypes.string,
   negativePositiveSignPlacement: PropTypes.oneOf(["l", "r", "p", "s"]),
   negativeSignCharacter: PropTypes.string,
   noEventListeners: PropTypes.bool,
-  onInvalidPaste: PropTypes.oneOf(["error", "ignore", "clamp", "truncate", "replace"]),
   outputFormat: PropTypes.oneOf(["string", "number"]),
-  overrideMinMaxLimits: PropTypes.oneOf(["ceiling", "floor", "ignore"]),
   positiveSignCharacter: PropTypes.string,
-  rawValueDivisor: PropTypes.number,
   readOnly: PropTypes.bool,
-  roundingMethod: PropTypes.string,
-  saveValueToSessionStorage: PropTypes.bool,
-  selectNumberOnly: PropTypes.bool,
-  selectOnFocus: PropTypes.bool,
-  serializeSpaces: PropTypes.string,
-  showOnlyNumbersOnFocus: PropTypes.bool,
-  showPositiveSign: PropTypes.bool,
-  showWarnings: PropTypes.bool,
-  styleRules: PropTypes.object,
-  suffixText: PropTypes.string,
-  symbolWhenUnfocused: PropTypes.string,
-  unformatOnHover: PropTypes.bool,
-  unformatOnSubmit: PropTypes.bool,
-  valuesToStrings: PropTypes.object,
-  wheelOn: PropTypes.oneOf(["focus", "hover"]),
-  wheelStep: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   preDefined: PropTypes.object,
 };
 
 UCurrency.defaultProps = {
   type: "text",
+  variant: "standard",
   outputFormat: "number",
   preDefined: {},
-  className: "asdf",
 };
+export default withStyles(styles)(UCurrency)
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions();

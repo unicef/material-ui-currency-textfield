@@ -26491,30 +26491,6 @@ var TextField$1 = withStyles$1(styles$m, {
   name: 'MuiTextField'
 })(TextField);
 
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-var createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
 var _extends$1 = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -26529,22 +26505,6 @@ var _extends$1 = Object.assign || function (target) {
   return target;
 };
 
-var inherits = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
 var objectWithoutProperties = function (obj, keys) {
   var target = {};
 
@@ -26555,14 +26515,6 @@ var objectWithoutProperties = function (obj, keys) {
   }
 
   return target;
-};
-
-var possibleConstructorReturn = function (self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
 /**
@@ -26579,24 +26531,40 @@ var styles$n = function styles(theme) {
   };
 };
 
-var CurrencyTextField = function (_React$Component) {
-  inherits(CurrencyTextField, _React$Component);
+function CurrencyTextField(props) {
+  var inputRef = React.useRef(null);
+  var classes = styles$n();
+  var label = props.label,
+      currencySymbol = props.currencySymbol,
+      variant = props.variant,
+      others = objectWithoutProperties(props, ["label", "currencySymbol", "variant"]);
 
-  function CurrencyTextField(props) {
-    classCallCheck(this, CurrencyTextField);
-    return possibleConstructorReturn(this, (CurrencyTextField.__proto__ || Object.getPrototypeOf(CurrencyTextField)).call(this, props));
-  }
 
-  createClass(CurrencyTextField, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _props = this.props,
-          label = _props.label,
-          currencySymbol = _props.currencySymbol,
-          variant = _props.variant,
-          others = objectWithoutProperties(_props, ["label", "currencySymbol", "variant"]);
+  var autonumeric = new AutoNumeric(inputRef, props.value, _extends$1({}, props.preDefined, others, {
+    onChange: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
+    onKeyPress: undefined,
+    onKeyUp: undefined,
+    onKeyDown: undefined,
+    watchExternalChanges: false
+  }));
 
-      this.autonumeric = new AutoNumeric(this.input, this.props.value, _extends$1({}, this.props.preDefined, others, {
+  React.useEffect(function () {
+  });
+
+  React.useEffect(function () {
+    autonumeric.remove();
+  }, []);
+
+  React.useEffect(function () {
+    var isOptionsChanged = JSON.stringify(_extends$1({}, props, { value: undefined })) !== JSON.stringify(_extends$1({}, newProps, { value: undefined }));
+    var isValueChanged = props.value !== newProps.value && getValue() !== newProps.value;
+    if (isValueChanged) {
+      autonumeric.set(newProps.value);
+    }
+    if (isOptionsChanged) {
+      autonumeric.update(_extends$1({}, newProps.preDefined, newProps, {
         onChange: undefined,
         onFocus: undefined,
         onBlur: undefined,
@@ -26606,103 +26574,65 @@ var CurrencyTextField = function (_React$Component) {
         watchExternalChanges: false
       }));
     }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.autonumeric.remove();
-    }
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(newProps) {
-      var isOptionsChanged = JSON.stringify(_extends$1({}, this.props, { value: undefined })) !== JSON.stringify(_extends$1({}, newProps, { value: undefined }));
-      var isValueChanged = this.props.value !== newProps.value && this.getValue() !== newProps.value;
-      if (isValueChanged) {
-        this.autonumeric.set(newProps.value);
+  }, [props.value]);
+
+  // componentWillReceiveProps(newProps) {
+  //   
+  // }
+
+  function getValue() {
+    if (!autonumeric) return;
+    var valueMapper = {
+      string: function string(numeric) {
+        return numeric.getNumericString();
+      },
+      number: function number(numeric) {
+        return numeric.getNumber();
       }
-      if (isOptionsChanged) {
-        this.autonumeric.update(_extends$1({}, newProps.preDefined, newProps, {
-          onChange: undefined,
-          onFocus: undefined,
-          onBlur: undefined,
-          onKeyPress: undefined,
-          onKeyUp: undefined,
-          onKeyDown: undefined,
-          watchExternalChanges: false
-        }));
-      }
-    }
-  }, {
-    key: "getValue",
-    value: function getValue() {
-      if (!this.autonumeric) return;
-      var valueMapper = {
-        string: function string(numeric) {
-          return numeric.getNumericString();
-        },
-        number: function number(numeric) {
-          return numeric.getNumber();
-        }
-      };
-      return valueMapper[this.props.outputFormat](this.autonumeric);
-    }
-  }, {
-    key: "callEventHandler",
-    value: function callEventHandler(event, eventName) {
-      if (!this.props[eventName]) return;
-      this.props[eventName](event, this.getValue());
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
+    };
+    return valueMapper[props.outputFormat](autonumeric);
+  }
 
-      var _props2 = this.props,
-          classes = _props2.classes,
-          label = _props2.label,
-          currencySymbol = _props2.currencySymbol,
-          variant = _props2.variant;
+  function callEventHandler(event, eventName) {
+    if (!props[eventName]) return;
+    props[eventName](event, getValue());
+  }
 
-
-      return React__default.createElement(TextField$1, {
-        label: label,
-        variant: variant,
-        className: classes.textField,
-        inputRef: function inputRef(ref) {
-          return _this2.input = ref;
-        },
-        onChange: function onChange(e) {
-          return _this2.callEventHandler(e, "onChange");
-        },
-        onFocus: function onFocus(e) {
-          return _this2.callEventHandler(e, "onFocus");
-        },
-        onBlur: function onBlur(e) {
-          return _this2.callEventHandler(e, "onBlur");
-        },
-        onKeyPress: function onKeyPress(e) {
-          return _this2.callEventHandler(e, "onKeyPress");
-        },
-        onKeyUp: function onKeyUp(e) {
-          return _this2.callEventHandler(e, "onKeyUp");
-        },
-        onKeyDown: function onKeyDown(e) {
-          return _this2.callEventHandler(e, "onKeyDown");
-        },
-        InputProps: {
-          startAdornment: React__default.createElement(
-            InputAdornment$1,
-            { position: "start" },
-            currencySymbol
-          )
-        },
-        inputProps: {
-          className: classes.textField
-        }
-      });
+  return React__default.createElement(TextField$1, {
+    label: label,
+    variant: variant,
+    className: classes.textField,
+    inputRef: inputRef,
+    onChange: function onChange(e) {
+      return callEventHandler(e, "onChange");
+    },
+    onFocus: function onFocus(e) {
+      return callEventHandler(e, "onFocus");
+    },
+    onBlur: function onBlur(e) {
+      return callEventHandler(e, "onBlur");
+    },
+    onKeyPress: function onKeyPress(e) {
+      return callEventHandler(e, "onKeyPress");
+    },
+    onKeyUp: function onKeyUp(e) {
+      return callEventHandler(e, "onKeyUp");
+    },
+    onKeyDown: function onKeyDown(e) {
+      return callEventHandler(e, "onKeyDown");
+    },
+    InputProps: {
+      startAdornment: React__default.createElement(
+        InputAdornment$1,
+        { position: "start" },
+        currencySymbol
+      )
+    },
+    inputProps: {
+      className: classes.textField
     }
-  }]);
-  return CurrencyTextField;
-}(React__default.Component);
+  });
+}
 
 CurrencyTextField.propTypes = {
   type: PropTypes__default.oneOf(["text", "tel", "hidden"]),
@@ -26750,8 +26680,7 @@ CurrencyTextField.defaultProps = {
   outputFormat: "number",
   preDefined: {}
 };
-var CurrencyTextField$1 = withStyles(styles$n)(CurrencyTextField);
 
 var predefinedOptions = AutoNumeric.getPredefinedOptions();
 
-module.exports = CurrencyTextField$1;
+module.exports = CurrencyTextField;

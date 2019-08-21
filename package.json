@@ -1,5 +1,5 @@
 {
-  "name": "material-ui-currency-input",
+  "name": "material-ui-currency-textfield",
   "version": "0.1.0",
   "description": "currency input for react with material ui style",
   "main": "./dist/index.js",
@@ -38,6 +38,8 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babelrc-rollup": "^3.0.0",
     "core-util-is": "^1.0.2",
@@ -62,8 +64,6 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "autonumeric": "^4.5.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
+    "autonumeric": "^4.5.4"
   }
 }

@@ -11,6 +11,10 @@ export default function App() {
     variant="standard"
     value={value}
     currencySymbol="$"
+    //minimumValue="0"
+    outputFormat="string"
+    decimalCharacter="."
+    digitGroupSeparator=","
     onChange={(event, value)=> setValue(value) }
     />
   );

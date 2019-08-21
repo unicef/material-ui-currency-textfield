@@ -1,6 +1,7 @@
 module.exports = {
   title: "Material ui currency input",
   components: "src/components/**/[A-Z]*.js",
+  showSidebar: false,
   webpackConfig: {
     module: {
       rules: [

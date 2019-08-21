@@ -4,14 +4,6 @@ import AutoNumeric from "autonumeric";
 import { withStyles } from '@material-ui/styles';
 import { TextField, InputAdornment } from "@material-ui/core";
 
-
-
-
-/**
- * UCurrency is currency input for react with automated currency number formatting while typing.
- * 
- * currency input made with material ui textfield to have material ui look and feel.
- */
 const styles = theme => ({
   textField: {
     textAlign: 'right',
@@ -19,6 +11,13 @@ const styles = theme => ({
   },
 })
 
+/**
+ * CurrencyTextField is a react component with automated formatter for currency and number.
+ * 
+ * Which has Material-ui textfield look and feel with different variants and some more cool features.
+ * 
+ * CurrencyTextField is a wrapper component for <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and based on <a href="https://github.com/mkg0/react-numeric">react-numeric</a>.
+ */
 
 class CurrencyTextField extends React.Component {
   constructor(props) {
@@ -104,6 +103,7 @@ class CurrencyTextField extends React.Component {
 }
 
 CurrencyTextField.propTypes = {
+  
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
   variant: PropTypes.string,
   id: PropTypes.string,
@@ -131,6 +131,7 @@ CurrencyTextField.propTypes = {
   decimalPlacesRawValue: PropTypes.number,
   decimalPlacesShownOnBlur: PropTypes.number,
   decimalPlacesShownOnFocus: PropTypes.number,
+  digitGroupSeparator: PropTypes.string,
   leadingZero: PropTypes.oneOf(["allow", "deny", "keep"]),
   maximumValue: PropTypes.string,
   minimumValue: PropTypes.string,
@@ -146,6 +147,7 @@ CurrencyTextField.propTypes = {
 CurrencyTextField.defaultProps = {
   type: "text",
   variant: "standard",
+  currencySymbol:"$",
   outputFormat: "number",
   preDefined: {},
 };

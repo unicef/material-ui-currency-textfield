@@ -5,7 +5,7 @@
 In order to extend the components, clone the project and install dependencies.
 
 ```bash
-$ git clone https://github.com/unicef/unicef-material-ui.git
+$ git clone https://github.com/unicef/material-ui-currency-textfield.git
 $ npm install
 ```
 

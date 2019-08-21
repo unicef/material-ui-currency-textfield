@@ -1,5 +1,5 @@
 import React from "react";
-import CurrencyTextField from "ucurrency";
+import CurrencyTextField from "material-ui-currency-textfield";
 
 export default function App() {
 

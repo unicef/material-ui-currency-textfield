@@ -1,4 +1,9 @@
-Type of variants: 
+ 
+CurrencyTextField also accepts all the props and classes of Material-Ui <a href="https://material-ui.com/api/text-field/#textfield-api">TextField API</a> and all the options from <a href="http://autonumeric.org/guide">AutoNumeric options</a>
+ 
+## Examples
+
+#### Type of variants: 
 
 ```html
 variant = 'standard' (default)
@@ -17,6 +22,7 @@ const [value, setValue] = React.useState(100);
 		<CurrencyTextField
 			label="Amount"
 			value={value}
+			unselectable
 			currencySymbol="$"
 			onChange={(event, value)=> setValue(value)}
 		/>
@@ -43,7 +49,7 @@ const [value, setValue] = React.useState(100);
 	</Grid>
 </Grid>
 ```
-Currency symbol
+#### Currency symbol
 ```html
  currencySymbol = 'string'
  
@@ -88,7 +94,7 @@ const [value, setValue] = React.useState(100);
 	</Grid>
 </Grid>
 ```
-Change in characters
+#### Change in characters
 ```html
 decimalCharacter=","
 digitGroupSeparator="."
@@ -106,7 +112,7 @@ const [value, setValue] = React.useState(100);
 	/>
 ```
 
-Output format : 
+####  Output format : 
 output value to be stored as string or number.
 ```html
 outputFormat='number' (default)
@@ -123,8 +129,24 @@ const [value, setValue] = React.useState(100);
 		onChange={(event, value)=> setValue(value)}
 	/>
 ```
+#### Predefined options
+```html
+preDefined={predefinedOptions.percentageEU2dec}
+```
+```jsx
+import { predefinedOptions } from './CurrencyTextField';
+const [value, setValue] = React.useState(100);
 
-Usage:
+	<CurrencyTextField
+		label="Amount"
+		value={value}
+		currencySymbol="$"
+		preDefined={predefinedOptions.percentageEU2dec}
+		onChange={(event, value)=> setValue(value)}
+	/>
+```
+
+#### Usage with showing more props
 ```html
 import React from 'react'
 import CurrencyTextField from '@unicef/material-ui-textfield'
@@ -143,6 +165,12 @@ export default function MyComponent() {
 		outputFormat="string"
 		decimalCharacter="."
 		digitGroupSeparator=","
+		//autoFocus
+		//className=classes.textField
+		//readonly
+		//disabled
+		//placeholder="Currency"
+		//preDefined={predefinedOptions.percentageEU2dec}
 		onChange={(event, value)=> setValue(value)}
     />
   );

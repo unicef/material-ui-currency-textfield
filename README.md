@@ -8,6 +8,9 @@ CurrencyTextField is a wrapper component for <a href="https://github.com/autoNum
 ```
 ## Usage
 
+The component **[documentation and live demo is available here](https://unicef.github.io/material-ui-currency-textfield/)**
+
+
 ```jsx
 import React from 'react'
 import CurrencyTextField from '@unicef/material-ui-textfield'
@@ -31,6 +34,8 @@ export default function MyComponent() {
   );
 }
 ```
+
+
 
 ## Development
 

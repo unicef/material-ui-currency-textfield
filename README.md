@@ -122,7 +122,7 @@ SOFTWARE.
 
 ### Acknowledgements
 
-The majority of the source code of this repo was developed by (@sureshsevarthi)[http://gihub.com/sureshsevarthi]./
+The majority of the source code of this repo was developed by [@sureshsevarthi](http://gihub.com/sureshsevarthi).
 
-Also, this source code is based on <a href="https://github.com/mkg0/react-numeric">react-numeric</a>.
+Also, this source code is based on [react-numeric](https://github.com/mkg0/react-numeric).
 

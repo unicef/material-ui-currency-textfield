@@ -1,6 +1,6 @@
 {
   "name": "@unicef/material-ui-currency-textfield",
-  "version": "0.1.0",
+  "version": "0.8.0",
   "description": "currency input for react with material ui style",
   "main": "./dist/index.js",
   "homepage": "https://unicef.github.io/material-ui-currency-textfield",
@@ -9,8 +9,6 @@
     "start": "rollup -c -w",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "babel src -d dist --copy-files",
     "deploy": "gh-pages -d styleguide --git \"$(which git)\" -m $(git log -1 --pretty=%B)",
     "prepublishOnly": "npm run transpile",
     "publish-demo": "npm run build && npm run deploy"
@@ -20,7 +18,7 @@
     "url": "git+https://github.com/unicef/material-ui-currency-textfield.git"
   },
   "author": "unicef",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

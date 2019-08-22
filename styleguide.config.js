@@ -1,6 +1,10 @@
+const path = require('path')
+const { styles, theme } = require('./styleguide.styles')
 module.exports = {
   title: "Material ui currency input",
-  components: "src/components/**/[A-Z]*.js",
+  showUsage: true,
+  styles,
+  theme,
   showSidebar: false,
   webpackConfig: {
     module: {
@@ -19,4 +23,19 @@ module.exports = {
       ],
     },
   },
+  // styleguideComponents: {
+  //   Logo: path.join(__dirname, 'src/assets/logo.png')
+  // },
+  sections: [
+    {
+      name: '',
+      content: 'src/components/readme.md'
+    },
+    {
+      name: '',
+      components: () => ([
+        path.resolve(__dirname, 'src/components/CurrencyTextField', 'CurrencyTextField.js'),
+      ])
+    },
+  ],
 };

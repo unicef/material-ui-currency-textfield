@@ -77,7 +77,7 @@ class CurrencyTextField extends React.Component {
     this.props[eventName](event, this.getValue());
   }
   render() {
-    const { classes, label, currencySymbol, variant } = this.props
+    const { classes, label, currencySymbol, variant, ...others } = this.props
     
     return (
         <TextField
@@ -97,50 +97,78 @@ class CurrencyTextField extends React.Component {
         inputProps={{
           className: classes.textField
         }}
+        {...others}
         />
     );
   }
 }
 
 CurrencyTextField.propTypes = {
-  
   type: PropTypes.oneOf(["text", "tel", "hidden"]),
+  /** The variant to use. */
   variant: PropTypes.string,
   id: PropTypes.string,
+  /** The CSS class name of the wrapper element. */
   className: PropTypes.string,
+  /** Inline styling for element */
   style: PropTypes.object,
+  /** If true, the input element will be disabled. */
   disabled: PropTypes.bool,
-  name: PropTypes.string,
+  /** The label content. */
+  label: PropTypes.string,
+  /** Tab index for the element */
   tabIndex: PropTypes.number,
-  unselectable: PropTypes.bool,
-  size: PropTypes.number,
+  /** If true, the input element will be focused during the first mount. */
   autoFocus: PropTypes.bool,
+  /** The short hint displayed in the input before the user enters a value. */
   placeholder: PropTypes.string,
+  /** value to be enter and display in input */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** Callback fired when the value is changed. */
   onChange: PropTypes.func,
+  /** Callback fired when focused on element. */
   onFocus: PropTypes.func,
+  /** Callback fired on blur. */
   onBlur: PropTypes.func,
+  /** Callback fired on key press. */
   onKeyPress: PropTypes.func,
+  /** Callback fired on key press. */
   onKeyUp: PropTypes.func,
+  /** Callback fired on key press. */
   onKeyDown: PropTypes.func,
+  /** Defines the currency symbol string. */
   currencySymbol: PropTypes.string,
-  currencySymbolPlacement: PropTypes.string,
+  /** Defines what decimal separator character is used. */
   decimalCharacter: PropTypes.string,
+  /** Allow to declare an alternative decimal separator which is automatically replaced by `decimalCharacter` when typed. */
   decimalCharacterAlternative: PropTypes.string,
+  /** Defines the default number of decimal places to show on the formatted value. */
   decimalPlaces: PropTypes.number,
-  decimalPlacesRawValue: PropTypes.number,
+  /** Defines how many decimal places should be visible when the element is unfocused	null. */
   decimalPlacesShownOnBlur: PropTypes.number,
+  /** Defines how many decimal places should be visible when the element has the focus. */
   decimalPlacesShownOnFocus: PropTypes.number,
+  /** Defines the thousand grouping separator character */
   digitGroupSeparator: PropTypes.string,
+  /** Controls the leading zero behavior	 */
   leadingZero: PropTypes.oneOf(["allow", "deny", "keep"]),
+  /** maximum value that can be enter */
   maximumValue: PropTypes.string,
+  /** minimum value that can be enter */
   minimumValue: PropTypes.string,
+  /** placement of the negitive and possitive sign symbols */
   negativePositiveSignPlacement: PropTypes.oneOf(["l", "r", "p", "s"]),
+  /** Defines the negative sign symbol to use	  */
   negativeSignCharacter: PropTypes.string,
-  noEventListeners: PropTypes.bool,
+  /** how the value should be formatted,before storing it */
   outputFormat: PropTypes.oneOf(["string", "number"]),
+  /** Defines if the element value should be selected on focus. */
+  selectOnFocus: PropTypes.bool,
+  /** Defines the positive sign symbol to use. */
   positiveSignCharacter: PropTypes.string,
+  /**	Defines if the element should be set as read only on initialization. */
   readOnly: PropTypes.bool,
+  /** predefined objects are available in <a href="https://www.nodenpm.com/autonumeric/4.5.1/detail.html#predefined-options">AutoNumeric</a>*/
   preDefined: PropTypes.object,
 };
 
@@ -149,7 +177,9 @@ CurrencyTextField.defaultProps = {
   variant: "standard",
   currencySymbol:"$",
   outputFormat: "number",
+  leadingZero: "keep",
   preDefined: {},
+  positiveSignCharacter: '+'
 };
 export default withStyles(styles)(CurrencyTextField)
 

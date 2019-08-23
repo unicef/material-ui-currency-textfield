@@ -1,7 +1,4 @@
-.DS_Store/
-*~
 .vscode
 node_modules
 example/node_modules
-dist
 styleguide

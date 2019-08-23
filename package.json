@@ -1,7 +1,7 @@
 {
   "name": "@unicef/material-ui-currency-textfield",
-  "version": "0.8.0",
-  "description": "currency input for react with material ui style",
+  "version": "0.8.1",
+  "description": "Currency input textfield for react with Material-ui style",
   "main": "./dist/index.js",
   "homepage": "https://unicef.github.io/material-ui-currency-textfield",
   "scripts": {
@@ -10,6 +10,7 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "deploy": "gh-pages -d styleguide --git \"$(which git)\" -m $(git log -1 --pretty=%B)",
+    "transpile": "./node_modules/@babel/cli/bin/babel.js src/components/CurrencyTextField -d dist --copy-files",
     "prepublishOnly": "npm run transpile",
     "publish-demo": "npm run build && npm run deploy"
   },
@@ -26,13 +27,14 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^4.2.0",
     "@types/node": "^12.6.8",
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
+    "babel-core": "^6.23.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -62,6 +64,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "autonumeric": "^4.5.4"
+    "autonumeric": "^4.5.4",
+    "@material-ui/core": "^4.2.0"
   }
 }

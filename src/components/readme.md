@@ -9,7 +9,7 @@
 
 ```html
 import React from 'react'
-import CurrencyTextField from '@unicef/material-ui-textfield'
+import CurrencyTextField from '@unicef/material-ui-currency-textfield'
 
 export default function MyComponent() {
 

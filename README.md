@@ -3,6 +3,15 @@
 `CurrencyTextField` is a [react](https://reactjs.org/) component with automated currency and number format, and with [Material-ui](https://material-ui.com/) look and feel.
 
 `CurrencyTextField` is a wrapper component for <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and based on <a href="https://github.com/mkg0/react-numeric">react-numeric</a>.
+
+![Example of material](https://github.com/unicef/material-ui-currency-textfield/blob/master/material-ui-currency-field.gif)
+
+Main features:
+ * Adds thousands separator automatically.
+ * Adds automatically the decimals on blur.
+ * Smart input. User can only type the accepted characters depending on the current value.
+ * Lots of config options...
+
 ## Installation
  ```
  npm install @unicef/material-ui-currency-textfield --save

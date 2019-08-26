@@ -3,19 +3,16 @@ import CurrencyTextField from "material-ui-currency-textfield";
 
 export default function App() {
 
-  const [value, setValue] = React.useState(100);
+  const value = 10000;
 
   return (
     <CurrencyTextField
-    label="Amount"
-    variant="standard"
-    value={value}
-    currencySymbol="$"
-    //minimumValue="0"
-    outputFormat="string"
-    decimalCharacter="."
-    digitGroupSeparator=","
-    onChange={(event, value)=> setValue(value) }
+      label="Amount"
+      value={value}
+      currencySymbol="$"
+      autoFocus
+      decimalCharacter="."
+      digitGroupSeparator=","
     />
   );
 }

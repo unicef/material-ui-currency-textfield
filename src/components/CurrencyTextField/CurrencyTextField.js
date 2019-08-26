@@ -5,10 +5,9 @@ import { withStyles } from '@material-ui/styles';
 import { TextField, InputAdornment } from "@material-ui/core";
 
 const styles = theme => ({
-  textField: {
-    textAlign: 'right',
-    justifyContent: 'right',
-  },
+  textField: props => ({
+    textAlign: props.textAlign || 'right',
+  }),
 })
 
 /**
@@ -24,7 +23,7 @@ class CurrencyTextField extends React.Component {
     super(props);
   }
   componentDidMount() {
-    const { label, currencySymbol, variant, ...others} = this.props
+    const {currencySymbol, ...others} = this.props
     this.autonumeric = new AutoNumeric(this.input, this.props.value, {
       ...this.props.preDefined,
       ...others,
@@ -77,13 +76,39 @@ class CurrencyTextField extends React.Component {
     this.props[eventName](event, this.getValue());
   }
   render() {
-    const { classes, label, currencySymbol, variant, ...others } = this.props
-    
+    const { classes, currencySymbol, inputProps, ...others } = this.props
+
+    const otherProps = {};
+    [
+      "id",
+      "label",
+      "className",
+      "autoFocus",
+      "variant",
+      "style",
+      "disabled",
+      "error",
+      "type",
+      "name",
+      "defaultValue",
+      "tabIndex",
+      "fullWidth",
+      "rows",
+      "rowsMax",
+      "select",
+      "required",
+      "helperText",
+      "unselectable",
+      "margin",
+      "SelectProps",
+      "multiline",
+      "size",
+      "FormHelperTextProps",
+      "placeholder",
+    ].forEach(prop => (otherProps[prop] = this.props[prop]));
+
     return (
         <TextField
-        label={label}
-        variant={variant}
-        className={classes.textField}
         inputRef={ref => (this.input = ref)}
         onChange={(e) => this.callEventHandler(e, "onChange")}
         onFocus={(e) => this.callEventHandler(e, "onFocus")}
@@ -94,10 +119,10 @@ class CurrencyTextField extends React.Component {
         InputProps={{
           startAdornment: <InputAdornment position="start">{currencySymbol}</InputAdornment>, 
         }}
-        inputProps={{
+        inputProps={inputProps || {
           className: classes.textField
         }}
-        {...others}
+        {...otherProps}
         />
     );
   }
@@ -116,6 +141,10 @@ CurrencyTextField.propTypes = {
   disabled: PropTypes.bool,
   /** The label content. */
   label: PropTypes.string,
+  /** Align the numbers in the textField. 
+   * If you pass the inputProps from TextFieldAPI text align won't work.
+  */
+  textAlign: PropTypes.oneOf(["right", "left", "center"]),
   /** Tab index for the element */
   tabIndex: PropTypes.number,
   /** If true, the input element will be focused during the first mount. */
@@ -177,9 +206,7 @@ CurrencyTextField.defaultProps = {
   variant: "standard",
   currencySymbol:"$",
   outputFormat: "number",
-  leadingZero: "keep",
-  preDefined: {},
-  positiveSignCharacter: '+'
+  textAlign: "right"
 };
 export default withStyles(styles)(CurrencyTextField)
 

@@ -1,6 +1,3 @@
- 
-CurrencyTextField also accepts all the props and classes of Material-Ui <a href="https://material-ui.com/api/text-field/#textfield-api">TextField API</a> and all the options from <a href="http://autonumeric.org/guide">AutoNumeric options</a>
- 
 ## Examples
 
 #### Type of variants: 

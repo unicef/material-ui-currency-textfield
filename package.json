@@ -1,7 +1,8 @@
 {
   "name": "@unicef/material-ui-currency-textfield",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Currency input textfield for react with Material-ui style",
+  "keywords": ["material design", "material ui", "currency", "currency input", "currency textfield", "react"],
   "main": "./dist/index.js",
   "homepage": "https://unicef.github.io/material-ui-currency-textfield",
   "scripts": {
@@ -18,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/unicef/material-ui-currency-textfield.git"
   },
-  "author": "unicef",
+  "author": "UNICEF",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.6",

@@ -29,7 +29,7 @@ class CurrencyTextField extends React.Component {
     super(props);
   }
   componentDidMount() {
-    const {currencySymbol, ...others} = this.props
+    const { currencySymbol, ...others } = this.props
     this.autonumeric = new AutoNumeric(this.input, this.props.value, {
       ...this.props.preDefined,
       ...others,
@@ -46,29 +46,6 @@ class CurrencyTextField extends React.Component {
     this.autonumeric.remove();
   }
 
-  componentWillReceiveProps(newProps) {
-    const isOptionsChanged =
-      JSON.stringify({ ...this.props, value: undefined }) !==
-      JSON.stringify({ ...newProps, value: undefined });
-    const isValueChanged =
-      this.props.value !== newProps.value && this.getValue() !== newProps.value;
-    if (isValueChanged) {
-      this.autonumeric.set(newProps.value);
-    }
-    if (isOptionsChanged) {
-      this.autonumeric.update({
-        ...newProps.preDefined,
-        ...newProps,
-        onChange: undefined,
-        onFocus: undefined,
-        onBlur: undefined,
-        onKeyPress: undefined,
-        onKeyUp: undefined,
-        onKeyDown: undefined,
-        watchExternalChanges: false,
-      });
-    }
-  }
   getValue() {
     if (!this.autonumeric) return;
     const valueMapper = {
@@ -77,10 +54,12 @@ class CurrencyTextField extends React.Component {
     };
     return valueMapper[this.props.outputFormat](this.autonumeric);
   }
+
   callEventHandler(event, eventName) {
     if (!this.props[eventName]) return;
     this.props[eventName](event, this.getValue());
   }
+
   render() {
     const { classes, currencySymbol, inputProps, ...others } = this.props
 
@@ -114,7 +93,7 @@ class CurrencyTextField extends React.Component {
     ].forEach(prop => (otherProps[prop] = this.props[prop]));
 
     return (
-        <TextField
+      <TextField
         inputRef={ref => (this.input = ref)}
         onChange={(e) => this.callEventHandler(e, "onChange")}
         onFocus={(e) => this.callEventHandler(e, "onFocus")}
@@ -123,13 +102,13 @@ class CurrencyTextField extends React.Component {
         onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
         onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
         InputProps={{
-          startAdornment: <InputAdornment position="start">{currencySymbol}</InputAdornment>, 
+          startAdornment: <InputAdornment position="start">{currencySymbol}</InputAdornment>,
         }}
         inputProps={inputProps || {
           className: classes.textField
         }}
         {...otherProps}
-        />
+      />
     );
   }
 }
@@ -211,7 +190,7 @@ CurrencyTextField.propTypes = {
 CurrencyTextField.defaultProps = {
   type: "text",
   variant: "standard",
-  currencySymbol:"$",
+  currencySymbol: "$",
   outputFormat: "number",
   textAlign: "right"
 };

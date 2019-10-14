@@ -142,7 +142,7 @@ const isValid = value < 1000;
 		currencySymbol="$"
 		onChange={(e, value) => setValue(value)}
 		error={isValid}
-		helperText={isValid && "minimum number is 1000"}
+		helperText={isValid && "minimum amount is 1000"}
 		decimalCharacter="."
 		digitGroupSeparator=","
 	/>;

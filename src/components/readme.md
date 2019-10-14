@@ -2,7 +2,7 @@
 
 [View on Github](https://github.com/unicef/material-ui-currency-textfield)
 ## Installation
- ```htmls
+ ```bash
  npm install @unicef/material-ui-currency-textfield --save
 ```
 ## Usage

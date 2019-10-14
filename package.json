@@ -17,7 +17,7 @@
     "start": "rollup -c -w",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "deploy": "gh-pages -d styleguide --git \"$(which git)\" -m $(git log -1 --pretty=%B)",
+    "deploy": "gh-pages -d styleguide",
     "transpile": "./node_modules/@babel/cli/bin/babel.js src/components/CurrencyTextField -d dist --copy-files",
     "prepublishOnly": "npm run transpile",
     "publish-demo": "npm run build && npm run deploy"
@@ -30,7 +30,8 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -50,7 +51,7 @@
     "babelrc-rollup": "^3.0.0",
     "core-util-is": "^1.0.2",
     "file-loader": "^4.1.0",
-    "gh-pages": "^2.1.0",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

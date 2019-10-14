@@ -140,7 +140,6 @@ const isValid = value < 1000;
 		label="Amount"
 		value={value}
 		currencySymbol="$"
-		autoFocus
 		onChange={(e, value) => setValue(value)}
 		error={isValid}
 		helperText={isValid && "minimum number is 1000"}

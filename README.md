@@ -4,7 +4,7 @@
 
 `CurrencyTextField` is a wrapper component for <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and based on <a href="https://github.com/mkg0/react-numeric">react-numeric</a>.
 
-![Example of material](https://github.com/unicef/material-ui-currency-textfield/blob/master/material-ui-currency-field.gif)
+![Example of material](https://raw.githubusercontent.com/unicef/material-ui-currency-textfield/master/material-ui-currency-field.gif)
 
 Main features:
  * Adds thousands separator automatically.

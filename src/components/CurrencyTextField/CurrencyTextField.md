@@ -126,6 +126,28 @@ const [value, setValue] = React.useState(100);
 		onChange={(event, value)=> setValue(value)}
 	/>
 ```
+
+#### error and helperText
+```html
+error={bool}
+helperText='string'
+```
+```jsx
+const [value, setValue] = React.useState(100);
+const isValid = value < 1000;
+
+	<CurrencyTextField
+		label="Amount"
+		value={value}
+		currencySymbol="$"
+		onChange={(e, value) => setValue(value)}
+		error={isValid}
+		helperText={isValid && "minimum number is 1000"}
+		decimalCharacter="."
+		digitGroupSeparator=","
+	/>;
+```
+
 #### Predefined options
 ```html
 preDefined={predefinedOptions.percentageEU2dec}

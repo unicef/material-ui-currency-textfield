@@ -1,8 +1,8 @@
 # Material-ui currency textfield
 
-`CurrencyTextField` is a [react](https://reactjs.org/) component with automated currency and number format, and with [Material-ui](https://material-ui.com/) look and feel.
+`CurrencyTextField` is a  [Material-ui](https://material-ui.com/) [react](https://reactjs.org/) component. It provides a user friendly experience while inputing currency numbers. 
 
-`CurrencyTextField` is a wrapper component for <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and based on <a href="https://github.com/mkg0/react-numeric">react-numeric</a>.
+`CurrencyTextField` wraps the functionality of <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and it is a port of <a href="https://github.com/mkg0/react-numeric">react-numeric</a> in Material-ui.
 
 ![Example of material](https://raw.githubusercontent.com/unicef/material-ui-currency-textfield/master/material-ui-currency-field.gif)
 
@@ -12,13 +12,15 @@ Main features:
  * Smart input. User can only type the accepted characters depending on the current value.
  * Lots of config options...
 
-## Installation
- ```
+## Install
+
+ ```bash
  npm install @unicef/material-ui-currency-textfield --save
 ```
+
 ## Usage
 
-The component **[documentation and live demo is available here](https://unicef.github.io/material-ui-currency-textfield/)**
+**[Documentation and live demo is available here](https://unicef.github.io/material-ui-currency-textfield/)**
 
 
 ```jsx
@@ -46,11 +48,9 @@ export default function MyComponent() {
 ```
 
 
-
 ## Development
 
-In order to extend the components, clone the project and install dependencies.
-
+In order to extend the component, clone the project and install the dependencies.
 ```bash
 $ git clone https://github.com/unicef/material-ui-currency-textfield.git
 $ npm install
@@ -60,19 +60,17 @@ The following commands are available:
 
 ### `npm start`
 
-Builds the app automatically for production to the `dist` folder, everytime you make changes in the code.
+Builds the component outputing it in the `dist` folder. It is refreshed everytime you make changes in the code.
 
-```
+```bash
 npm start
 ```
 
-This build we are utilizing in example project, so each time we make some changes in the app. it builds the app to `dist` folder. so that we can see changes in the example project.
+To see the output in the browser run the example app ([/example](https://github.com/unicef/material-ui-currency-textfield/tree/master/example))
 
-Now open new tab in bash and run this commands:
-
- ```
+```bash
  cd example 
- npm install (only if it is firt time)
+ npm install (only first time)
  npm start
  ```
 Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
@@ -81,30 +79,19 @@ It will reload automatically upon edits. Lint errors are also displayed on the c
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.
-
-It bundles application in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+Outputs the build for production to the `dist` folder.
 
 ### `npm run styleguide`
-Generates the documentation the development mode.
+Generates the documentation available on.
+
 Open [http://localhost:6060](http://localhost:6060) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+It watches for changes and automatically reloads the browser.
 
 We use [styleguidelist](https://react-styleguidist.js.org/) for documenting our custom components.
 
-
 ### `npm run styleguide:build`
-Builds the styleguide for production to the `styleguide` folder.<br>
-It correctly bundles React-styleguide in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
+Builds the styleguide documentation for production. The output targets the `styleguide` folder.
 
 ## License
 

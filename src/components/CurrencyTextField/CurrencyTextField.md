@@ -147,6 +147,42 @@ const isValid = value < 1000;
 		digitGroupSeparator=","
 	/>;
 ```
+#### maximumValue and minimumValue
+```html
+maximumValue={10000000000000}  (default) | "Value can be increased and decreased"
+minimumValue={-10000000000000} (default) | "Value can be increased and decreased"
+```
+```jsx
+import { Grid, Typography } from '@material-ui/core'
+const [value, setValue] = React.useState(100);
+
+	<Grid container spacing={3}>
+		<Grid item xs={12} md={4}>
+			<Typography variant="subtitle1" gutterBottom={true}>Maximum value  1000</Typography>
+			<CurrencyTextField
+			label="Amount"
+			value={value}
+			currencySymbol="$"
+			maximumValue={1000}
+			onChange={(e, value) => setValue(value)}
+			decimalCharacter="."
+			digitGroupSeparator=","
+			/>
+		</Grid>
+		<Grid item xs={12} md={4}>
+			<Typography variant="subtitle1" gutterBottom={true}>Minimum value -100</Typography>
+			<CurrencyTextField
+				label="Amount"
+				value={value}
+				currencySymbol="$"
+				minimumValue={-100}
+				onChange={(e, value) => setValue(value)}
+				decimalCharacter="."
+				digitGroupSeparator=","
+			/>
+		</Grid>
+	</Grid>
+```
 
 #### Predefined options
 ```html

@@ -203,6 +203,8 @@ CurrencyTextField.defaultProps = {
   currencySymbol: "$",
   outputFormat: "number",
   textAlign: "right",
+  maximumValue: 10000000000000,
+  minimumValue: -10000000000000,
 }
 export default withStyles(styles)(CurrencyTextField)
 

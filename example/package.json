@@ -6,13 +6,13 @@
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.2.0",
-    "gh-pages": "^2.0.1",
     "@unicef/material-ui-currency-textfield": "file:..",
+    "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

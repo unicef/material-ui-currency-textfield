@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import AutoNumeric from "autonumeric";
-import { withStyles } from '@material-ui/styles';
-import { TextField, InputAdornment } from "@material-ui/core";
+import React from "react"
+import PropTypes from "prop-types"
+import AutoNumeric from "autonumeric"
+import { withStyles } from "@material-ui/styles"
+import { TextField, InputAdornment } from "@material-ui/core"
 
 const styles = theme => ({
   textField: props => ({
-    textAlign: props.textAlign || 'right',
+    textAlign: props.textAlign || "right",
   }),
 })
 
@@ -26,7 +26,7 @@ const styles = theme => ({
 
 class CurrencyTextField extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
   componentDidMount() {
     const { currencySymbol, ...others } = this.props
@@ -40,31 +40,37 @@ class CurrencyTextField extends React.Component {
       onKeyUp: undefined,
       onKeyDown: undefined,
       watchExternalChanges: false,
-    });
+    })
   }
   componentWillUnmount() {
-    this.autonumeric.remove();
+    this.autonumeric.remove()
   }
 
   getValue() {
-    if (!this.autonumeric) return;
+    if (!this.autonumeric) return
     const valueMapper = {
       string: numeric => numeric.getNumericString(),
       number: numeric => numeric.getNumber(),
-    };
-    return valueMapper[this.props.outputFormat](this.autonumeric);
+    }
+    return valueMapper[this.props.outputFormat](this.autonumeric)
   }
 
   callEventHandler(event, eventName) {
-    if (!this.props[eventName]) return;
-    this.props[eventName](event, this.getValue());
+    if (!this.props[eventName]) return
+    this.props[eventName](event, this.getValue())
   }
 
   render() {
-    const { classes, currencySymbol, inputProps, ...others } = this.props
+    const {
+      classes,
+      currencySymbol,
+      inputProps,
+      InputProps,
+      ...others
+    } = this.props
 
-    const otherProps = {};
-    [
+    const otherProps = {}
+    ;[
       "id",
       "label",
       "className",
@@ -90,26 +96,30 @@ class CurrencyTextField extends React.Component {
       "size",
       "FormHelperTextProps",
       "placeholder",
-    ].forEach(prop => (otherProps[prop] = this.props[prop]));
+    ].forEach(prop => (otherProps[prop] = this.props[prop]))
 
     return (
       <TextField
         inputRef={ref => (this.input = ref)}
-        onChange={(e) => this.callEventHandler(e, "onChange")}
-        onFocus={(e) => this.callEventHandler(e, "onFocus")}
-        onBlur={(e) => this.callEventHandler(e, "onBlur")}
-        onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
-        onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
-        onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
+        onChange={e => this.callEventHandler(e, "onChange")}
+        onFocus={e => this.callEventHandler(e, "onFocus")}
+        onBlur={e => this.callEventHandler(e, "onBlur")}
+        onKeyPress={e => this.callEventHandler(e, "onKeyPress")}
+        onKeyUp={e => this.callEventHandler(e, "onKeyUp")}
+        onKeyDown={e => this.callEventHandler(e, "onKeyDown")}
         InputProps={{
-          startAdornment: <InputAdornment position="start">{currencySymbol}</InputAdornment>,
+          startAdornment: (
+            <InputAdornment position="start">{currencySymbol}</InputAdornment>
+          ),
+          ...InputProps,
         }}
-        inputProps={inputProps || {
-          className: classes.textField
+        inputProps={{
+          className: classes.textField,
+          ...inputProps,
         }}
         {...otherProps}
       />
-    );
+    )
   }
 }
 
@@ -126,10 +136,10 @@ CurrencyTextField.propTypes = {
   disabled: PropTypes.bool,
   /** The label content. */
   label: PropTypes.string,
-  /** Align the numbers in the textField. 
+  /** Align the numbers in the textField.
    * If you pass the `inputProps` from TextFieldAPI text align won't work.
    * then, you have handle it by className with your own class inside inputProps.
-  */
+   */
   textAlign: PropTypes.oneOf(["right", "left", "center"]),
   /** Tab index for the element */
   tabIndex: PropTypes.number,
@@ -185,15 +195,15 @@ CurrencyTextField.propTypes = {
   readOnly: PropTypes.bool,
   /** predefined objects are available in <a href="https://www.nodenpm.com/autonumeric/4.5.1/detail.html#predefined-options">AutoNumeric</a>*/
   preDefined: PropTypes.object,
-};
+}
 
 CurrencyTextField.defaultProps = {
   type: "text",
   variant: "standard",
   currencySymbol: "$",
   outputFormat: "number",
-  textAlign: "right"
-};
+  textAlign: "right",
+}
 export default withStyles(styles)(CurrencyTextField)
 
-export const predefinedOptions = AutoNumeric.getPredefinedOptions();
+export const predefinedOptions = AutoNumeric.getPredefinedOptions()

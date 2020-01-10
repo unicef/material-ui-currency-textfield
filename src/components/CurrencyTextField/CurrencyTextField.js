@@ -178,9 +178,9 @@ CurrencyTextField.propTypes = {
   /** Controls the leading zero behavior	 */
   leadingZero: PropTypes.oneOf(["allow", "deny", "keep"]),
   /** maximum value that can be enter */
-  maximumValue: PropTypes.string,
+  maximumValue: PropTypes.number,
   /** minimum value that can be enter */
-  minimumValue: PropTypes.string,
+  minimumValue: PropTypes.number,
   /** placement of the negitive and possitive sign symbols */
   negativePositiveSignPlacement: PropTypes.oneOf(["l", "r", "p", "s"]),
   /** Defines the negative sign symbol to use	  */

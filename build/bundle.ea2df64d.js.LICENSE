@@ -8,6 +8,12 @@
  * @license MIT
  */
 
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.16.0
@@ -41,7 +47,7 @@
  * @version   v4.2.8+1e68dce6
  */
 
-/** @license React v16.8.6
+/** @license React v16.12.0
  * react-dom.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -50,7 +56,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v16.8.6
+/** @license React v16.12.0
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -59,13 +65,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
-/** @license React v0.13.6
+/** @license React v0.18.0
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -83,7 +83,7 @@ object-assign
 /*!
  * The buffer module from node.js, for the browser.
  *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @author   Feross Aboukhadijeh <http://feross.org>
  * @license  MIT
  */
 

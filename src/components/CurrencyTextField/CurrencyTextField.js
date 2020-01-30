@@ -27,7 +27,10 @@ const styles = theme => ({
 class CurrencyTextField extends React.Component {
   constructor(props) {
     super(props)
+    this.getValue = this.getValue.bind(this)
+    this.callEventHandler = this.callEventHandler.bind(this)
   }
+
   componentDidMount() {
     const { currencySymbol, ...others } = this.props
     this.autonumeric = new AutoNumeric(this.input, this.props.value, {
@@ -46,6 +49,16 @@ class CurrencyTextField extends React.Component {
     this.autonumeric.remove()
   }
 
+  componentWillReceiveProps(newProps) {
+    const isValueChanged =
+      this.props.value !== otherProps.value &&
+      this.getValue() !== otherProps.value
+
+    if (isValueChanged) {
+      this.autonumeric.set(otherProps.value)
+    }
+  }
+
   getValue() {
     if (!this.autonumeric) return
     const valueMapper = {
@@ -54,12 +67,10 @@ class CurrencyTextField extends React.Component {
     }
     return valueMapper[this.props.outputFormat](this.autonumeric)
   }
-
   callEventHandler(event, eventName) {
     if (!this.props[eventName]) return
     this.props[eventName](event, this.getValue())
   }
-
   render() {
     const {
       classes,
@@ -77,8 +88,8 @@ class CurrencyTextField extends React.Component {
       "autoFocus",
       "variant",
       "style",
-      "disabled",
       "error",
+      "disabled",
       "type",
       "name",
       "defaultValue",
@@ -169,21 +180,21 @@ CurrencyTextField.propTypes = {
   decimalCharacterAlternative: PropTypes.string,
   /** Defines the default number of decimal places to show on the formatted value. */
   decimalPlaces: PropTypes.number,
-  /** Defines how many decimal places should be visible when the element is unfocused	null. */
+  /** Defines how many decimal places should be visible when the element is unfocused null. */
   decimalPlacesShownOnBlur: PropTypes.number,
   /** Defines how many decimal places should be visible when the element has the focus. */
   decimalPlacesShownOnFocus: PropTypes.number,
   /** Defines the thousand grouping separator character */
   digitGroupSeparator: PropTypes.string,
-  /** Controls the leading zero behavior	 */
+  /** Controls the leading zero behavior   */
   leadingZero: PropTypes.oneOf(["allow", "deny", "keep"]),
   /** maximum value that can be enter */
-  maximumValue: PropTypes.number,
+  maximumValue: PropTypes.string,
   /** minimum value that can be enter */
-  minimumValue: PropTypes.number,
+  minimumValue: PropTypes.string,
   /** placement of the negitive and possitive sign symbols */
   negativePositiveSignPlacement: PropTypes.oneOf(["l", "r", "p", "s"]),
-  /** Defines the negative sign symbol to use	  */
+  /** Defines the negative sign symbol to use   */
   negativeSignCharacter: PropTypes.string,
   /** how the value should be formatted,before storing it */
   outputFormat: PropTypes.oneOf(["string", "number"]),
@@ -191,7 +202,7 @@ CurrencyTextField.propTypes = {
   selectOnFocus: PropTypes.bool,
   /** Defines the positive sign symbol to use. */
   positiveSignCharacter: PropTypes.string,
-  /**	Defines if the element should be set as read only on initialization. */
+  /** Defines if the element should be set as read only on initialization. */
   readOnly: PropTypes.bool,
   /** predefined objects are available in <a href="https://www.nodenpm.com/autonumeric/4.5.1/detail.html#predefined-options">AutoNumeric</a>*/
   preDefined: PropTypes.object,
@@ -203,8 +214,8 @@ CurrencyTextField.defaultProps = {
   currencySymbol: "$",
   outputFormat: "number",
   textAlign: "right",
-  maximumValue: 10000000000000,
-  minimumValue: -10000000000000,
+  maximumValue: "10000000000000",
+  minimumValue: "-10000000000000",
 }
 export default withStyles(styles)(CurrencyTextField)
 

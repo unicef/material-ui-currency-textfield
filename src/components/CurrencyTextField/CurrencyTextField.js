@@ -27,7 +27,10 @@ const styles = theme => ({
 class CurrencyTextField extends React.Component {
   constructor(props) {
     super(props)
+    this.getValue = this.getValue.bind(this)
+    this.callEventHandler = this.callEventHandler.bind(this)
   }
+
   componentDidMount() {
     const { currencySymbol, ...others } = this.props
     this.autonumeric = new AutoNumeric(this.input, this.props.value, {
@@ -45,29 +48,17 @@ class CurrencyTextField extends React.Component {
   componentWillUnmount() {
     this.autonumeric.remove()
   }
+
   componentWillReceiveProps(newProps) {
-    const isOptionsChanged =
-      JSON.stringify({ ...this.props, value: undefined }) !==
-      JSON.stringify({ ...newProps, value: undefined })
     const isValueChanged =
-      this.props.value !== newProps.value && this.getValue() !== newProps.value
+      this.props.value !== otherProps.value &&
+      this.getValue() !== otherProps.value
+
     if (isValueChanged) {
-      this.autonumeric.set(newProps.value)
-    }
-    if (isOptionsChanged) {
-      this.autonumeric.update({
-        ...newProps.preDefined,
-        ...newProps,
-        onChange: undefined,
-        onFocus: undefined,
-        onBlur: undefined,
-        onKeyPress: undefined,
-        onKeyUp: undefined,
-        onKeyDown: undefined,
-        watchExternalChanges: false,
-      })
+      this.autonumeric.set(otherProps.value)
     }
   }
+
   getValue() {
     if (!this.autonumeric) return
     const valueMapper = {
@@ -76,12 +67,10 @@ class CurrencyTextField extends React.Component {
     }
     return valueMapper[this.props.outputFormat](this.autonumeric)
   }
-
   callEventHandler(event, eventName) {
     if (!this.props[eventName]) return
     this.props[eventName](event, this.getValue())
   }
-
   render() {
     const {
       classes,
@@ -94,14 +83,13 @@ class CurrencyTextField extends React.Component {
     const otherProps = {}
     ;[
       "id",
-      "value",
       "label",
       "className",
       "autoFocus",
       "variant",
       "style",
-      "disabled",
       "error",
+      "disabled",
       "type",
       "name",
       "defaultValue",

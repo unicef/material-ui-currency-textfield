@@ -145,7 +145,7 @@ CurrencyTextField.propTypes = {
   /** If true, the input element will be disabled. */
   disabled: PropTypes.bool,
   /** The label content. */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /** Align the numbers in the textField.
    * If you pass the `inputProps` from TextFieldAPI text align won't work.
    * then, you have handle it by className with your own class inside inputProps.

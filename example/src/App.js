@@ -23,6 +23,7 @@ export default function App() {
         helperText={"minimum number is 100"}
         decimalCharacter="."
         digitGroupSeparator=","
+        onInvalidPaste="replace"
       />
       <Button onClick={resetValue}>Reset</Button>
     </React.Fragment>

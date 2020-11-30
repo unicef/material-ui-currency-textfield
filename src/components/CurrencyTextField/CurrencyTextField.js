@@ -106,6 +106,7 @@ class CurrencyTextField extends React.Component {
       "size",
       "FormHelperTextProps",
       "placeholder",
+      "InputLabelProps",
     ].forEach(prop => (otherProps[prop] = this.props[prop]))
 
     return (

@@ -49,7 +49,7 @@ class CurrencyTextField extends React.Component {
     this.autonumeric.remove()
   }
 
-  componentWillReceiveProps(newProps) {
+  componentDidUpdate(newProps) {
     const isValueChanged =
       this.props.value !== newProps.value && this.getValue() !== newProps.value
 

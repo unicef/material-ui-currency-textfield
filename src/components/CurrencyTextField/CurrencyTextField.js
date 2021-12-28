@@ -76,6 +76,7 @@ class CurrencyTextField extends React.Component {
       currencySymbol,
       inputProps,
       InputProps,
+      InputLabelProps,
       ...others
     } = this.props
 
@@ -126,6 +127,9 @@ class CurrencyTextField extends React.Component {
         inputProps={{
           className: classes.textField,
           ...inputProps,
+        }}
+        InputLabelProps={{
+          ...InputLabelProps
         }}
         {...otherProps}
       />

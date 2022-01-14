@@ -1,6 +1,6 @@
 import React from "react"
 import CurrencyTextField from "@unicef/material-ui-currency-textfield"
-import { Button } from "@material-ui/core"
+import { Button } from "@mui/material"
 
 export default function App() {
   const [value, setValue] = React.useState(99)

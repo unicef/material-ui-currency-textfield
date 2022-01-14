@@ -1,14 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import AutoNumeric from "autonumeric"
-import { withStyles } from "@material-ui/styles"
-import { TextField, InputAdornment } from "@material-ui/core"
-
-const styles = theme => ({
-  textField: props => ({
-    textAlign: props.textAlign || "right",
-  }),
-})
+import { TextField, InputAdornment } from "@mui/material"
 
 /**
  * CurrencyTextField is a [react](https://reactjs.org/) component with automated currency and number format, and with [Material-ui](https://material-ui.com/) look and feel.
@@ -80,33 +73,32 @@ class CurrencyTextField extends React.Component {
     } = this.props
 
     const otherProps = {}
-    ;[
-      "id",
-      "label",
-      "className",
-      "autoFocus",
-      "variant",
-      "style",
-      "error",
-      "disabled",
-      "type",
-      "name",
-      "defaultValue",
-      "tabIndex",
-      "fullWidth",
-      "rows",
-      "rowsMax",
-      "select",
-      "required",
-      "helperText",
-      "unselectable",
-      "margin",
-      "SelectProps",
-      "multiline",
-      "size",
-      "FormHelperTextProps",
-      "placeholder",
-    ].forEach(prop => (otherProps[prop] = this.props[prop]))
+      ;[
+        "id",
+        "label",
+        "className",
+        "autoFocus",
+        "variant",
+        "style",
+        "error",
+        "disabled",
+        "type",
+        "name",
+        "defaultValue",
+        "tabIndex",
+        "fullWidth",
+        "rows",
+        "select",
+        "required",
+        "helperText",
+        "unselectable",
+        "margin",
+        "SelectProps",
+        "multiline",
+        "size",
+        "FormHelperTextProps",
+        "placeholder",
+      ].forEach(prop => (otherProps[prop] = this.props[prop]))
 
     return (
       <TextField
@@ -124,8 +116,12 @@ class CurrencyTextField extends React.Component {
           ...InputProps,
         }}
         inputProps={{
-          className: classes.textField,
-          ...inputProps,
+          ...inputProps
+        }}
+        sx={{
+          "& .MuiInput-input": {
+            textAlign: this.props.textAlign || "right"
+          }
         }}
         {...otherProps}
       />
@@ -179,13 +175,13 @@ CurrencyTextField.propTypes = {
   decimalCharacterAlternative: PropTypes.string,
   /** Defines the default number of decimal places to show on the formatted value. */
   decimalPlaces: PropTypes.number,
-  /** Defines how many decimal places should be visible when the element is unfocused null. */
+  /** Defines how many decimal places should be visible when the element is unfocused null. */
   decimalPlacesShownOnBlur: PropTypes.number,
   /** Defines how many decimal places should be visible when the element has the focus. */
   decimalPlacesShownOnFocus: PropTypes.number,
   /** Defines the thousand grouping separator character */
   digitGroupSeparator: PropTypes.string,
-  /** Controls the leading zero behavior   */
+  /** Controls the leading zero behavior   */
   leadingZero: PropTypes.oneOf(["allow", "deny", "keep"]),
   /** maximum value that can be enter */
   maximumValue: PropTypes.string,
@@ -193,7 +189,7 @@ CurrencyTextField.propTypes = {
   minimumValue: PropTypes.string,
   /** placement of the negitive and possitive sign symbols */
   negativePositiveSignPlacement: PropTypes.oneOf(["l", "r", "p", "s"]),
-  /** Defines the negative sign symbol to use   */
+  /** Defines the negative sign symbol to use   */
   negativeSignCharacter: PropTypes.string,
   /** how the value should be formatted,before storing it */
   outputFormat: PropTypes.oneOf(["string", "number"]),
@@ -201,7 +197,7 @@ CurrencyTextField.propTypes = {
   selectOnFocus: PropTypes.bool,
   /** Defines the positive sign symbol to use. */
   positiveSignCharacter: PropTypes.string,
-  /** Defines if the element should be set as read only on initialization. */
+  /** Defines if the element should be set as read only on initialization. */
   readOnly: PropTypes.bool,
   /** predefined objects are available in <a href="https://www.nodenpm.com/autonumeric/4.5.1/detail.html#predefined-options">AutoNumeric</a>*/
   preDefined: PropTypes.object,
@@ -216,6 +212,7 @@ CurrencyTextField.defaultProps = {
   maximumValue: "10000000000000",
   minimumValue: "-10000000000000",
 }
-export default withStyles(styles)(CurrencyTextField)
+
+export default CurrencyTextField;
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions()

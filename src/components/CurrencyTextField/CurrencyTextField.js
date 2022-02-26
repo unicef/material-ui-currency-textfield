@@ -203,7 +203,7 @@ CurrencyTextField.propTypes = {
   positiveSignCharacter: PropTypes.string,
   /** Defines if the element should be set as read only on initialization. */
   readOnly: PropTypes.bool,
-  /** predefined objects are available in <a href="https://www.nodenpm.com/autonumeric/4.5.1/detail.html#predefined-options">AutoNumeric</a>*/
+  /** predefined objects are available in <a href="https://github.com/autoNumeric/autoNumeric/blob/master/README.md#predefined-options">AutoNumeric</a>*/
   preDefined: PropTypes.object,
 }
 

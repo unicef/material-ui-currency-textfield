@@ -5,8 +5,8 @@
   "homepage": ".",
   "dependencies": {
     "@lupus-ai/mui-currency-textfield": "file:..",
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
+    "@mui/material": "^5.11.1",
+    "@mui/icons-material": "^5.11.0",
     "gh-pages": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "file:../node_modules/react",

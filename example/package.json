@@ -4,9 +4,9 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@material-ui/core": "^4.1.1",
-    "@material-ui/icons": "^4.2.0",
     "@lupus-ai/mui-currency-textfield": "file:..",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.2.0",
     "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "file:../node_modules/react",
@@ -36,6 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }

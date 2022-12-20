@@ -6,13 +6,13 @@
   "dependencies": {
     "@lupus-ai/mui-currency-textfield": "file:..",
     "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.2.0",
-    "gh-pages": "^2.0.1",
-    "prop-types": "^15.7.2",
+    "@material-ui/icons": "^4.11.3",
+    "gh-pages": "^4.0.0",
+    "prop-types": "^15.8.1",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.3.0"
+    "react-router-dom": "^6.5.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

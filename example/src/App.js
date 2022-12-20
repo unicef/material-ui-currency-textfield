@@ -1,5 +1,5 @@
 import React from "react"
-import CurrencyTextField from "@unicef/material-ui-currency-textfield"
+import CurrencyTextField from "@lupus-ai/mui-currency-textfield"
 import { Button } from "@material-ui/core"
 
 export default function App() {

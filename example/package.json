@@ -1,12 +1,12 @@
 {
-  "name": "@unicef/material-ui-currency-textfield-example",
+  "name": "@lupus-ai/mui-currency-textfield-example",
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.2.0",
-    "@unicef/material-ui-currency-textfield": "file:..",
+    "@lupus-ai/mui-currency-textfield": "file:..",
     "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "file:../node_modules/react",

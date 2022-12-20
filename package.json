@@ -1,5 +1,5 @@
 {
-  "name": "@unicef/material-ui-currency-textfield",
+  "name": "@lupus-ai/mui-currency-textfield",
   "version": "0.8.6",
   "description": "Currency input textfield for react with Material-ui style",
   "keywords": [
@@ -25,9 +25,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unicef/material-ui-currency-textfield.git"
+    "url": "git+https://github.com/LupusAI/mui-currency-textfield.git"
   },
-  "author": "UNICEF",
+  "author": "LupusAI",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.6",

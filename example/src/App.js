@@ -1,6 +1,9 @@
 import React from "react"
 import CurrencyTextField from "@lupus-ai/mui-currency-textfield"
 import { Button } from "@material-ui/core"
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme();
 
 export default function App() {
   const [value, setValue] = React.useState(99)
@@ -10,7 +13,7 @@ export default function App() {
     setValue(0)
   }
 
-  return (
+  return <ThemeProvider theme={theme}>
     <React.Fragment>
       <CurrencyTextField
         label="Amount"
@@ -26,5 +29,5 @@ export default function App() {
       />
       <Button onClick={resetValue}>Reset</Button>
     </React.Fragment>
-  )
+  </ThemeProvider>;
 }

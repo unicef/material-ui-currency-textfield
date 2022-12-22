@@ -2,3 +2,5 @@
 node_modules
 example/node_modules
 styleguide
+src/
+webpack.config.js

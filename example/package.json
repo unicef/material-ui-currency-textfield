@@ -2,28 +2,24 @@
   "name": "@lupus-ai/mui-currency-textfield-example",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@lupus-ai/mui-currency-textfield": "file:..",
     "@mui/material": "^5.11.1",
-    "@mui/icons-material": "^5.11.0",
-    "gh-pages": "^4.0.0",
-    "prop-types": "^15.8.1",
-    "react": "file:../node_modules/react",
-    "react-dom": "file:../node_modules/react-dom",
-    "react-router-dom": "^6.5.0",
-    "react-scripts": "^5.0.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

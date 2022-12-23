@@ -9,7 +9,7 @@ variant = 'standard' (default)
 ```
 
 ```jsx
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 
 const [value, setValue] = React.useState(100);
 
@@ -53,7 +53,7 @@ const [value, setValue] = React.useState(100);
  Ex : '$' | '£' | '€'
 ```
 ```jsx
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 
 const [value, setValue] = React.useState(100);
 
@@ -153,7 +153,7 @@ maximumValue={10000000000000}  (default) | "Value can be increased and decreased
 minimumValue={-10000000000000} (default) | "Value can be increased and decreased"
 ```
 ```jsx
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@mui/material'
 const [value, setValue] = React.useState(100);
 
 	<Grid container spacing={3}>
@@ -204,7 +204,7 @@ const [value, setValue] = React.useState(100);
 #### Usage with showing more props
 ```html
 import React from 'react'
-import CurrencyTextField from '@unicef/material-ui-currency-textfield'
+import CurrencyTextField from '@lupus-ai/mui-currency-textfield'
 
 export default function MyComponent() {
 

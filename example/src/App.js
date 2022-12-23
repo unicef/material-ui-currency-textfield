@@ -1,8 +1,8 @@
-import React from "react"
-import CurrencyTextField from "@unicef/material-ui-currency-textfield"
-import { Button } from "@material-ui/core"
+import CurrencyTextField from '@lupus-ai/mui-currency-textfield';
+import { Button } from "@mui/material"
+import React from 'react';
 
-export default function App() {
+function App() {
   const [value, setValue] = React.useState(99)
   const error = value < 100
 
@@ -11,7 +11,7 @@ export default function App() {
   }
 
   return (
-    <React.Fragment>
+    <div className="App">
       <CurrencyTextField
         label="Amount"
         value={value}
@@ -25,6 +25,8 @@ export default function App() {
         digitGroupSeparator=","
       />
       <Button onClick={resetValue}>Reset</Button>
-    </React.Fragment>
-  )
+    </div>
+  );
 }
+
+export default App;

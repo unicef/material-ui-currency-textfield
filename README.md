@@ -1,11 +1,11 @@
-# Material-ui currency textfield (IN PROGRESS)
+# Currency Textfield for Material UI version 5 (MUI)
 [![npm version](https://badge.fury.io/js/%40unicef%2Fmaterial-ui-currency-textfield.svg)](https://badge.fury.io/js/%40unicef%2Fmaterial-ui-currency-textfield)
 
-`CurrencyTextField` is a  [Material-ui](https://material-ui.com/) [react](https://reactjs.org/) component. It provides a user friendly experience while inputing currency numbers. 
+`CurrencyTextField` is a [MUI](https://mui.com/) [react](https://reactjs.org/) component. It provides a user friendly experience while inputing currency numbers. 
 
-`CurrencyTextField` wraps the functionality of <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and it is a port of <a href="https://github.com/mkg0/react-numeric">react-numeric</a> in Material-ui.
+`CurrencyTextField` wraps the functionality of <a href="https://github.com/autoNumeric/autoNumeric">autonumeric</a> and it is a port of <a href="https://github.com/mkg0/react-numeric">react-numeric</a> in Material-UI version 5.
 
-![Example of material](https://raw.githubusercontent.com/unicef/material-ui-currency-textfield/master/material-ui-currency-field.gif)
+![Example of material](https://raw.githubusercontent.com/LupusAI/mui-currency-textfield/master/mui-currency-field.gif)
 
 Main features:
  * Adds thousands separator automatically.
@@ -16,17 +16,17 @@ Main features:
 ## Install
 
  ```bash
- npm install @unicef/material-ui-currency-textfield --save
+ npm install @lupus-ai/mui-currency-textfield --save
 ```
 
 ## Usage
 
-**[Documentation and live demo is available here](https://unicef.github.io/material-ui-currency-textfield/)**
+**[Documentation and live demo is available here](https://LupusAI.github.io/mui-currency-textfield/)**
 
 
 ```jsx
 import React from 'react'
-import CurrencyTextField from '@unicef/material-ui-currency-textfield'
+import CurrencyTextField from '@lupus-ai/mui-currency-textfield'
 
 export default function MyComponent() {
 
@@ -53,7 +53,7 @@ export default function MyComponent() {
 
 In order to extend the component, clone the project and install the dependencies.
 ```bash
-$ git clone https://github.com/unicef/material-ui-currency-textfield.git
+$ git clone https://github.com/LupusAI/mui-currency-textfield.git
 $ npm install
 ```
 
@@ -67,7 +67,7 @@ Builds the component outputing it in the `dist` folder. It is refreshed everytim
 npm start
 ```
 
-To see the output in the browser run the example app ([/example](https://github.com/unicef/material-ui-currency-textfield/tree/master/example))
+To see the output in the browser run the example app ([/example](https://github.com/LupusAI/mui-currency-textfield/tree/master/example))
 
 ```bash
  cd example 
@@ -89,22 +89,43 @@ Open [http://localhost:6060](http://localhost:6060) to view it in the browser.
 
 It watches for changes and automatically reloads the browser.
 
-We use [styleguidelist](https://react-styleguidist.js.org/) for documenting our custom components.
+We use [styleguidist](https://react-styleguidist.js.org/) for documenting our custom components.
 
 ### `npm run styleguide:build`
 Builds the styleguide documentation for production. The output targets the `styleguide` folder.
 
 
-## About UNICEF
+## Forked and Continued Development
+
+This repository is a fork of [unicef/material-ui-currency-textfield](https://github.com/unicef/material-ui-currency-textfield). The original project is no longer maintained, so we have decided to fork the repository and continue development on the project.
+
+The main changes have been to update the Material UI version 5 since version 4 is deprecated and update support to react 18.
+I plan to continue development on the project and add the following features:
+
+We have made the following major changes to the original project:
+
+1. Updating to Material UI version 5
+Material UI version 4 is now deprecated, so we have upgraded to version 5 in order to take advantage of the latest features and improvements.
+
+2. Updating support to React 18
+We have upgraded to React 18 in order to take advantage of the latest features and improvements, as well as to ensure that our project is compatible with the latest version of React.
+
+3. Switching from Rollup to Webpack as Bundler
+We have switched from using Rollup as our bundler to using Webpack. By switching to Webpack, we are able to take advantage of the latest features and improvements in this popular bundler, which will help to improve the performance and reliability of this project.
+
+We plan to continue development on the project and work on these:
+- decrease bundle size
+- replace deprecated react lifecycle methods
+
+We would like to credit the original authors for their work and make it clear that this project would not be possible without their efforts.
+
+The contributions of [@sureshsevarthi](http://github.com/sureshsevarthi) laid the groundwork for what the project has become today.
+
+### About UNICEF
 
 [UNICEF](https://www.unicef.org/) works in over 190 countries and territories to protect the rights of every child. UNICEF has spent more than 70 years working to improve the lives of children and their families. In UNICEF, we **believe all children have a right to survive, thrive and fulfill their potential – to the benefit of a better world**.
 
-[Donate](https://donate.unicef.org/donate/now)
-
-
-## Collaborations and support
-
-Just fork the project and make a pull request. You may also [consider donating](https://donate.unicef.org/donate/now).
+Please consider donating [here](https://donate.unicef.org/donate/now).
 
 
 ## License
@@ -129,10 +150,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-### Acknowledgements
-
-The majority of the source code of this repo was developed by [@sureshsevarthi](http://github.com/sureshsevarthi).
-
-Also, this source code is based on [react-numeric](https://github.com/mkg0/react-numeric).
 

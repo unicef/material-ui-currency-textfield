@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MUI Currency Textfield Example",
+  "name": "Example of how to utilize the MUI currency textfield",
   "icons": [
     {
       "src": "favicon.ico",

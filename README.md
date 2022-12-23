@@ -89,7 +89,7 @@ Open [http://localhost:6060](http://localhost:6060) to view it in the browser.
 
 It watches for changes and automatically reloads the browser.
 
-We use [styleguidelist](https://react-styleguidist.js.org/) for documenting our custom components.
+We use [styleguidist](https://react-styleguidist.js.org/) for documenting our custom components.
 
 ### `npm run styleguide:build`
 Builds the styleguide documentation for production. The output targets the `styleguide` folder.

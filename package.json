@@ -29,6 +29,7 @@
   "author": "LupusAI",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",

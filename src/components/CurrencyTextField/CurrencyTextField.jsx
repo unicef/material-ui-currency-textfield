@@ -1,8 +1,8 @@
-import React from "react"
 import PropTypes from "prop-types"
 import AutoNumeric from "autonumeric"
-import { withStyles } from "@mui/styles"
+import { withStyles } from 'tss-react/mui';
 import { TextField, InputAdornment } from "@mui/material"
+import React from "react"
 
 const styles = theme => ({
   textField: props => ({
@@ -49,7 +49,7 @@ class CurrencyTextField extends React.Component {
     this.autonumeric.remove()
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     const isValueChanged =
       this.props.value !== newProps.value && this.getValue() !== newProps.value
 
@@ -216,6 +216,6 @@ CurrencyTextField.defaultProps = {
   maximumValue: "10000000000000",
   minimumValue: "-10000000000000",
 }
-export default withStyles(styles)(CurrencyTextField)
+export default withStyles(CurrencyTextField, styles)
 
 export const predefinedOptions = AutoNumeric.getPredefinedOptions()

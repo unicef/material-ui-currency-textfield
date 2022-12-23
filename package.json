@@ -11,12 +11,12 @@
     "react"
   ],
   "main": "./dist/index.js",
-  "homepage": "https://unicef.github.io/material-ui-currency-textfield",
+  "homepage": "https://lupusai.github.io/mui-currency-textfield/",
   "scripts": {
     "build": "webpack",
     "start": "rollup -c -w",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
+    "predeploy": "styleguidist build",
     "deploy": "gh-pages -d styleguide",
     "transpile": "./node_modules/@babel/cli/bin/babel.js src/components/CurrencyTextField -d dist --copy-files",
     "prepublishOnly": "npm run transpile",

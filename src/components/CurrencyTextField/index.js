@@ -1,1 +1,1 @@
-export { default } from "./CurrencyTextField"
+export { default } from "./CurrencyTextField.jsx"

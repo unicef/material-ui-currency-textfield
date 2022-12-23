@@ -1,11 +1,11 @@
 import PropTypes from "prop-types"
 import AutoNumeric from "autonumeric"
-import { withStyles } from 'tss-react/mui';
+import { withStyles } from "tss-react/mui"
 import { TextField, InputAdornment } from "@mui/material"
 import React from "react"
 
-const styles = theme => ({
-  textField: props => ({
+const styles = (theme) => ({
+  textField: (props) => ({
     textAlign: props.textAlign || "right",
   }),
 })
@@ -61,8 +61,8 @@ class CurrencyTextField extends React.Component {
   getValue() {
     if (!this.autonumeric) return
     const valueMapper = {
-      string: numeric => numeric.getNumericString(),
-      number: numeric => numeric.getNumber(),
+      string: (numeric) => numeric.getNumericString(),
+      number: (numeric) => numeric.getNumber(),
     }
     return valueMapper[this.props.outputFormat](this.autonumeric)
   }
@@ -71,13 +71,8 @@ class CurrencyTextField extends React.Component {
     this.props[eventName](event, this.getValue())
   }
   render() {
-    const {
-      classes,
-      currencySymbol,
-      inputProps,
-      InputProps,
-      ...others
-    } = this.props
+    const { classes, currencySymbol, inputProps, InputProps, ...others } =
+      this.props
 
     const otherProps = {}
     ;[
@@ -106,17 +101,17 @@ class CurrencyTextField extends React.Component {
       "size",
       "FormHelperTextProps",
       "placeholder",
-    ].forEach(prop => (otherProps[prop] = this.props[prop]))
+    ].forEach((prop) => (otherProps[prop] = this.props[prop]))
 
     return (
       <TextField
-        inputRef={ref => (this.input = ref)}
-        onChange={e => this.callEventHandler(e, "onChange")}
-        onFocus={e => this.callEventHandler(e, "onFocus")}
-        onBlur={e => this.callEventHandler(e, "onBlur")}
-        onKeyPress={e => this.callEventHandler(e, "onKeyPress")}
-        onKeyUp={e => this.callEventHandler(e, "onKeyUp")}
-        onKeyDown={e => this.callEventHandler(e, "onKeyDown")}
+        inputRef={(ref) => (this.input = ref)}
+        onChange={(e) => this.callEventHandler(e, "onChange")}
+        onFocus={(e) => this.callEventHandler(e, "onFocus")}
+        onBlur={(e) => this.callEventHandler(e, "onBlur")}
+        onKeyPress={(e) => this.callEventHandler(e, "onKeyPress")}
+        onKeyUp={(e) => this.callEventHandler(e, "onKeyUp")}
+        onKeyDown={(e) => this.callEventHandler(e, "onKeyDown")}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">{currencySymbol}</InputAdornment>

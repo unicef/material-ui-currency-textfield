@@ -20,7 +20,8 @@
     "deploy": "gh-pages -d styleguide",
     "transpile": "./node_modules/@babel/cli/bin/babel.js src/components/CurrencyTextField -d dist --copy-files",
     "prepublishOnly": "npm run transpile",
-    "publish-demo": "npm run build && npm run deploy"
+    "publish-demo": "npm run build && npm run deploy",
+    "format": "prettier --write \"./src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.3",
     "gh-pages": "^4.0.0",
+    "prettier": "^2.8.1",
     "react-styleguidist": "^13.0.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",

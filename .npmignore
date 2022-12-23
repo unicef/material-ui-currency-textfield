@@ -4,3 +4,8 @@ example/node_modules
 styleguide
 src/
 webpack.config.js
+example/
+.babelrc
+styleguide.*
+.prettierrc
+.gitignore
